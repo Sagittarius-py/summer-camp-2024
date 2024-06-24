@@ -1,7 +1,7 @@
 import { Product } from "@/lib/products";
 
-async function getProducts(page: number, showAlcohol: boolean): Promise<Product[]> {
-  const res = await fetch(`http://localhost:3000/api/products?page=${page}&showAlcohol=${showAlcohol}`, { cache: 'no-store' });
+async function getProducts(page: number): Promise<Product[]> {
+  const res = await fetch(`http://localhost:3000/api/products?page=${page}`, { cache: 'no-store' });
   const response = await res.json()
   return response;
 }
@@ -9,9 +9,8 @@ async function getProducts(page: number, showAlcohol: boolean): Promise<Product[
 export default async function Products({ searchParams }: any) {
     /* TODO: Create an endpoint that returns a list of products, and use that here.
    */
-  const showAlcohol = false;
   const page = searchParams.page ? parseInt(searchParams.page) : 1;
-  const products  = await getProducts(page, showAlcohol);
+  const products  = await getProducts(page);
   const totalPages = 10;
 
 

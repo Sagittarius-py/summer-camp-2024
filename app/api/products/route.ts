@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: "Invalid page number" }, { status: 400 });
     }
 
-    const products = fetchProducts(page, showAlcohol);
+    const products = fetchProducts(page);
     return NextResponse.json(products);
   } catch (error) {
     console.error("Error fetching products:", error);

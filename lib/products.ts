@@ -13,7 +13,7 @@ export type Product = {
 };
 
 
-export function fetchProducts(page: any, showAlcohol: string): Array<Product> {
+export function fetchProducts(page: any): Array<Product> {
     if(page === 0){
       page = 1;
     }
@@ -26,9 +26,9 @@ export function fetchProducts(page: any, showAlcohol: string): Array<Product> {
       var combinedData = [...dataJson, ...dataCSV];
       combinedData = sortById(combinedData)
 
-      if(showAlcohol == 'false'){
+  
         combinedData = filterAlkohol(combinedData);
-      }
+
 
       const startIndex = (pageNumber - 1) * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
