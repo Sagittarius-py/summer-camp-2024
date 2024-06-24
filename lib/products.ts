@@ -26,9 +26,7 @@ export function fetchProducts(page: any): Array<Product> {
       var combinedData = [...dataJson, ...dataCSV];
       combinedData = sortById(combinedData)
 
-  
-        combinedData = filterAlkohol(combinedData);
-
+      combinedData = filterAlkohol(combinedData);
 
       const startIndex = (pageNumber - 1) * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
