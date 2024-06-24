@@ -9,7 +9,6 @@ import { fetchProducts } from '@/lib/products';
 export async function GET(req: NextRequest) {
   try {
     const page = parseInt(req.nextUrl.searchParams.get("page") || '1', 10);
-    const showAlcohol = req.nextUrl.searchParams.get("showAlcohol") || "false";
 
     if (isNaN(page) || page < 1) {
       return NextResponse.json({ error: "Invalid page number" }, { status: 400 });
