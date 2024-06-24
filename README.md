@@ -21,12 +21,12 @@ type Product = {
 
 2. The client wants to temporarily hide products containing alcohol due to licensing issues, so the list must contain only non-alcohol products.
 
-# Done - "lib/products.ts : filterAlkohol()"
+Done - "lib/products.ts : filterAlkohol()"
 
 Next, you need to create an endpoint in `app/api/products` that returns a list of products. The list should be sorted in ascending order by product ID. Additionally, the data should be paginated and return 10 products per page. The endpoint should accept a `page` parameter to return the appropriate page.
 
-# Done - Pagination, filtering & sorting done in "lib/products.ts : fetchProducts()"
+Done - Pagination, filtering & sorting done in "lib/products.ts : fetchProducts()"
 
 The final step is to visualise the data returned from the backend, so you need to expand the existing table component in `app/products` to display data returned by the endpoint.
 
-# Done - Modified "getProducts() - added searchParams and fetch options"
+Done - Modified "getProducts() - added searchParams and fetch options"
